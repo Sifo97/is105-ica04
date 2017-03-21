@@ -21,6 +21,7 @@ panic("Fatal file error")
 }
 var bytes int64
 bytes = filestats.Size()
+
 var kilobytes int64
 kilobytes = (bytes / 1024)
 
@@ -41,5 +42,14 @@ fmt.Println("IsDir: ", filestats.IsDir())
 //check hvis Symbolic link
 if filestats.Mode()&os.ModeSymlink == os.ModeSymlink {
                  fmt.Println("File is a symbolic link")
+}
+if filestats.Mode()&os.ModeDevice != 0 {
+fmt.Println("Device file.")
+}
+if filestats.Mode()&os.ModeCharDevice != 0 {
+fmt.Println("Unix character device")
+}
+if filestats.Mode()&os.ModeAppend != 0 {
+fmt.Println("Append only device.")
 }
 }
