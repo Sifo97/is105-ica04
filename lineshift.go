@@ -23,7 +23,7 @@ fmt.Println("----------FILE CONTENTS----------")
 }
 
 func main() {
-getFileLine("./files/text2.txt")
+getFileLine("./files/text1.txt")
 getFileLine("./files/text2.txt")
 fmt.Println("Main func")
 }
