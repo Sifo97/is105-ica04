@@ -18,9 +18,8 @@ panic(err)
 //Printe ut file-contents
 fmt.Println("----------FILE CONTENTS----------")
 fmt.Println(FileContents)
-fmt.Println("----------FILE CONTENTS----------")
-if strings.Contains(string(FileContents),"10 13") {
-fmt.Println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+if strings.Contains(string(FileContents),"\r\n") {
+fmt.Println("Windows linebreak detected!")
 }
 }
 
