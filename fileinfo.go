@@ -19,7 +19,8 @@ flag.Parse()
 fmt.Println("Henter informasjon fra file: " + *FileName)
 file, err := os.Open(*FileName) 
 if err != nil { // Feil = Panic
-         panic("Fatal file error")
+         panic("Fatal file error ")
+		 fmt.Println(err)
      }
 defer file.Close()
 filestats, err := file.Stat()
