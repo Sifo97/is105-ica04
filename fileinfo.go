@@ -35,9 +35,11 @@ fmt.Println("Size(Bytes): ", bytes)
 fmt.Println("Size(Kibibytes): ", kilobytes)
 fmt.Println("Size(Mibibytes): ", megabytes)
 fmt.Println("Size(Gibibytes): ", gigabytes)
-fmt.Println("Mode: ", filestats.Mode())
+fmt.Println("Mode: ", filestats.Mode().String())
+fmt.Println("Permission bits: ", filestats.Mode().Perm())
 fmt.Println("IsDir: ", filestats.IsDir())
-
-filemodes, err := file.FileMode()
-
+//check hvis Symbolic link
+if filestats.Mode()&os.ModeSymlink == os.ModeSymlink {
+                 fmt.Println("File is a symbolic link")
+}
 }
