@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"strings"
 )
 var FileContents string
 var HexConverted string
-
 func getFileLine(fileName string) {
 fmt.Println("Henter Line break format for: " + fileName)
 //Lese filen
@@ -17,14 +17,14 @@ panic(err)
 }
 //Printe ut file-contents
 fmt.Println("----------FILE CONTENTS----------")
-fmt.Println(fileName)
 fmt.Println(FileContents)
 fmt.Println("----------FILE CONTENTS----------")
-
+if strings.Contains(string(FileContents),"10 13") {
+fmt.Println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+}
 }
 
 func main() {
 getFileLine("./files/text1.txt")
 getFileLine("./files/text2.txt")
-fmt.Println("Main func")
 }
