@@ -2,10 +2,18 @@ package main
 import (
 	"os"
 	"fmt"
+    "path/filepath"
+	"log"
 	"flag"
 )
 
 func main() {
+   dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+    if err != nil {
+            log.Fatal(err)
+    }
+    fmt.Println("Running from: "  + dir)
+	
 FileName := flag.String("f", "", "Filnavnet til file som vi skal hente informasjon fra")
 flag.Parse()
 fmt.Println("Henter informasjon fra file: " + *FileName)
