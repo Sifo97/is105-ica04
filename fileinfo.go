@@ -58,6 +58,8 @@ fmt.Println("Device file.")
 if filestats.Mode()&os.ModeCharDevice != 0 {
 fmt.Println("Unix character device")
 }
+//block device, hvis det er device og ikke character da er det block
+
 if filestats.Mode()&os.ModeAppend != 0 {
 fmt.Println("Append only device.")
 }
