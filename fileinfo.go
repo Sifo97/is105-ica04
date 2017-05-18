@@ -58,14 +58,14 @@ func main() {
 	}
 	if filestats.Mode()&os.ModeDevice != 0 {
 		fmt.Println("Device file")
-		dfile = true
+		dFile = true
 	}
 	if filestats.Mode()&os.ModeCharDevice != 0 {
 		fmt.Println("Unix character device")
 		uDevice = true
 	}
 	//Hvis filen er device file og ikke Unix character device da er den Unix block device.
-	if dfile == true && uDevice == false {
+	if dFile == true && uDevice == false {
 		fmt.Println("Unix block device")
 	}
 	if filestats.Mode()&os.ModeAppend != 0 {
