@@ -50,8 +50,8 @@ func main() {
 	fmt.Println("Mode: ", filestats.Mode().String())
 	fmt.Println("Permission bits: ", filestats.Mode().Perm())
 	fmt.Println("IsDir: ", filestats.IsDir())
-	var dFile bool := false
-	var uDevice bool := false
+	var dFile bool = false
+	var uDevice bool = false
 	//check hvis Symbolic link
 	if filestats.Mode()&os.ModeSymlink == os.ModeSymlink {
         fmt.Println("File is a symbolic link")
