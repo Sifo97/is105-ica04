@@ -20,7 +20,7 @@ func main() {
 	file, err := os.Open(*FileName) 
 	if err != nil { // Feil = Panic
 		fmt.Println(err)
-			panic("Fatal file error ")
+		panic("Fatal file error ")
     }
 	
 	defer file.Close()
