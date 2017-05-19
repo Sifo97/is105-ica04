@@ -21,11 +21,9 @@ import (
 		fmt.Println(FileContents)
 		if strings.Contains(string(FileContents),"\r\n") {
 			fmt.Println("Windows linebreak detected!")
-		}
-		if strings.Contains(string(FileContents), "\r") {
+		} else if strings.Contains(string(FileContents), "\r") {
 			fmt.Println("Linux linebreak detected!")
-		}
-		if strings.Contains(string(FileContents), "\n") {
+		} else if strings.Contains(string(FileContents), "\n") {
 			fmt.Println("Unix linebreak detected!")
 		}
 	}
